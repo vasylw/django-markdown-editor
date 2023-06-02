@@ -10,8 +10,7 @@ blocks:
       jobs:
         - name: Docker build
           commands:
-            - 'echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" -'
-            - '-password-stdin'
+            - echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
             - 'docker build --cache-from=$DOCKER_USERNAME/django-markdowneditor:latest -t $DOCKER_USERNAME/django-markdown-editor:latest .'
             - 'docker push $DOCKER_USERNAME/django-markdown-editor:latest'
       secrets:
