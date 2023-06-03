@@ -41,7 +41,6 @@ blocks:
             - flake8 martor_demo/ --max-line-length=127
       prologue:
         commands:
-          - cache restore
           - cd martor_demo
 after_pipeline:
   task:
