@@ -10,11 +10,8 @@ blocks:
       jobs:
         - name: Pip
           commands:
-            - cd django-markdown-editor/martor_demo
             - python manage.py makemigrations
             - python manage.py migrate
-            - cd ..
-            - cd ..
             - cache store
       secrets:
         - name: dockerhub
