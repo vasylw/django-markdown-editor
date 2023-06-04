@@ -23,4 +23,4 @@ blocks:
           - pip install --cache-dir .pip_cache -r requirements.txt
       env_vars:
         - name: container_tag
-          value: date
+          value: $date
