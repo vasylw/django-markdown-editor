@@ -12,8 +12,8 @@ blocks:
           commands:
             - echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
             - echo SEMAPHORE_GIT_PR_NUMBER
-            - 'docker build --cache-from=$DOCKER_USERNAME/django-markdowneditor:SEMAPHORE_GIT_PR_NUMBER -t $DOCKER_USERNAME/django-markdown-editor:SEMAPHORE_GIT_PR_NUMBER .'
-            - 'docker push $DOCKER_USERNAME/django-markdown-editor:SEMAPHORE_GIT_PR_NUMBER'
+            - 'docker build --cache-from=$DOCKER_USERNAME/django-markdowneditor:"$SEMAPHORE_GIT_PR_NUMBER-1" -t $DOCKER_USERNAME/django-markdown-editor:"$SEMAPHORE_GIT_PR_NUMBER" .'
+            - 'docker push $DOCKER_USERNAME/django-markdown-editor:"$SEMAPHORE_GIT_PR_NUMBER"'
       secrets:
         - name: dockerhub
       prologue:
